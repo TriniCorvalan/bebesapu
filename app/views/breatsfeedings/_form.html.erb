@@ -1,0 +1,32 @@
+<%= form_with(model: [@baby, breatsfeeding], local: true) do |form| %>
+    <% if breatsfeeding.errors.any? %>
+    <div id="error_explanation">
+        <h2> <%= pluralize(breatsfeeding.errors.count, "error") %> "Impidieron que el breatsfeeding se guarde" </h2>
+        
+        <ul>
+            <% breatsfeeding.errors.full.message.each do |message| %>
+                <li> <%= message %></li>
+            <% end %> %>
+        </ul>
+    </div>
+    <% end %>
+
+    <div class="field">
+        <%= form.label :Cantidad %>
+        <%= form.text_field :cantidad %>
+    </div>
+
+    <div class="field">
+        <%= form.label :Tiempo %>
+        <%= form.text_field :tiempo %>
+    </div>
+    
+    <div class="field">
+        <%= form.label :Baby %>
+        <%= form.select :baby_id, @babies.map{|baby| [baby.name, baby.id] }, prompt: "Seleccione una opción.." %>
+    </div>
+    
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %> 

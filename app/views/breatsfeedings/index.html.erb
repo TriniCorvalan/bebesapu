@@ -1,0 +1,28 @@
+<h1>Breatsfeeding</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Cantidad</th>
+            <th>Tiempo</th>
+            <th>Bebe</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @breatsfeedings.each do |breatsfeeding| %>
+            <tr>
+                <td> <%= breatsfeeding.cantidad %> </td>
+                <td> <%= breatsfeeding.tiempo %> </td>
+                <td> <%= breatsfeeding.baby %> </td>
+                <td> <%= link_to 'Show', baby_breatsfeeding_path(@baby, breatsfeeding) %> </td>
+                <td><%= link_to 'Edit', edit_baby_breatsfeeding_path(@baby, breatsfeeding) %></td>
+                <td><%= link_to 'Destroy', baby_breatsfeeding_path(@baby, breatsfeeding), method: :delete, data: { confirm: 'Seguro?' } %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New breatsfeeding', new_baby_breatsfeeding_path(@baby) %>
