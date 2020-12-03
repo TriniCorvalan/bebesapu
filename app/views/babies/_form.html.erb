@@ -18,18 +18,6 @@
     <%= form.text_field :name %>
   </div>
   
-  <p>Breatsfeeding</p>
-  
-  <%= form.fields_for :breatsfeeding do |breatsfeeding_form| %>
-    <%= breatsfeeding_form.label :cantidad %>
-    <%= breatsfeeding_form.text_field :cantidad %>
-  <% end %>
-
-  <%= form.fields_for :breatsfeeding do |breatsfeeding_form| %>
-    <%= breatsfeeding_form.label :tiempo %>
-    <%= breatsfeeding_form.text_field :tiempo %>
-  <% end %>
-  
   <div class="actions">
     <%= form.submit %>
   </div>
